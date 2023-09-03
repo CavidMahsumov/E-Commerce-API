@@ -21,8 +21,4 @@
     <ProjectReference Include="..\..\Infrastructure\E-CommerceAPI.Persistence\E-CommerceAPI.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

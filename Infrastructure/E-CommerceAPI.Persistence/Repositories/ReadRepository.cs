@@ -31,7 +31,13 @@ namespace E_CommerceAPI.Persistence.Repositories
         public async Task<T> GetByIdAsync(string id, bool tracking = true)
         //=>await Table.Find(data => data.Id==Guid.Parse(id));//Maker Pattern
         {
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
 
+            }
+            return await query.FirstOrDefaultAsync(data=>data.Id==Guid.Parse(id));
         }
         public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
         {

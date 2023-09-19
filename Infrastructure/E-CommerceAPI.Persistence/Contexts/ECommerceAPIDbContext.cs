@@ -12,7 +12,7 @@ namespace E_CommerceAPI.Persistence.Contexts
     public class ECommerceAPIDbContext : DbContext
     {
         public ECommerceAPIDbContext(DbContextOptions options) : base(options)
-        {
+        { 
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -26,11 +26,12 @@ namespace E_CommerceAPI.Persistence.Contexts
 
             foreach (var data in datas)
             {
-                _= data.State switch//discard
+                _ = data.State switch//discard
                 {
-                    EntityState.Added=>data.Entity.CreatedDate=DateTime.UtcNow,
-                    EntityState.Modified=>data.Entity.UpdatedDate=DateTime.UtcNow,
-                };
+                    EntityState.Added => data.Entity.CreatedDate = DateTime.UtcNow,
+                    EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
+                    _ => DateTime.UtcNow
+                }; ;
             }
 
             return await base.SaveChangesAsync(cancellationToken);

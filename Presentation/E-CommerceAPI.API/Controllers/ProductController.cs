@@ -25,6 +25,7 @@ namespace E_CommerceAPI.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery]Pagination pagination)
         {
+
             var totalCount = _productReadRepository.GetAll(false).Count();
            var products= _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
             {
@@ -69,7 +70,7 @@ namespace E_CommerceAPI.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult>Delete(string id)
         {
-            await _productWriteRepository.RemoveAsync(id);
+           await _productWriteRepository.RemoveAsync(id);
             await _productWriteRepository.SaveAsync();
             return Ok();
         }

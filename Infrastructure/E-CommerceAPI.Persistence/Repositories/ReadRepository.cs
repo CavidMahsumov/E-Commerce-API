@@ -46,7 +46,7 @@ namespace E_CommerceAPI.Persistence.Repositories
             {
                 query = query.AsNoTracking();
                 
-            }
+            } 
             return await query.FirstOrDefaultAsync(method);
         }
         public  IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)

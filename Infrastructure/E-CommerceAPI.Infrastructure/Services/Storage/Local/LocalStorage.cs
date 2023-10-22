@@ -57,7 +57,7 @@ namespace E_CommerceAPI.Infrastructure.Services.Storage.Local
             }
             List<(string fileName, string path)> datas = new();
 
-
+             
             foreach (IFormFile file in files)
             {
                 string newFileName = await FileRenameAsync(uploadPath, file.Name, HasFile);

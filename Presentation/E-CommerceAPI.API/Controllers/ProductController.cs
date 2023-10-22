@@ -94,11 +94,11 @@ namespace E_CommerceAPI.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload()
         {
-            var datas=await _storageService.UploadAsync("resource/files", Request.Form.Files);
+            var datas=await _storageService.UploadAsync("resource/files", Request.Form.Files);//if using Azure change Upload async parametr ("files",Request.Form,Files)
             //var datas= await _fileService.UploadAsync("resource/files", Request.Form.Files);
             await _productImageFileWriteRepository.AddRangeAsync(datas.Select(d => new ProductImageFile()
             {
-                FileName = d.filaName,
+                FileName = d.fileName,
                 Path = d.pathOrContainerName,
                 Storage = _storageService.StorageName
             }).ToList()) ; 

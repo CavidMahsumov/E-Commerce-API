@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceAPI.Application.Abstarctions.Storage.Azure
 {
-    internal class IAzureStorage
+    public interface IAzureStorage:IStorage
     {
     }
 }

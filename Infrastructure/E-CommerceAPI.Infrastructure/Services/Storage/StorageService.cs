@@ -28,7 +28,7 @@ namespace E_CommerceAPI.Infrastructure.Services.Storage
         public bool HasFile(string pathOrContainerName, string fileName)
         =>_storage.HasFile(pathOrContainerName, fileName);
 
-        public Task<List<(string filaName, string pathOrContainerName)>> UploadAsync(string pathOrContainerName, IFormFileCollection files)
+        public Task<List<(string fileName, string pathOrContainerName)>> UploadAsync(string pathOrContainerName, IFormFileCollection files)
         =>_storage.UploadAsync(pathOrContainerName, files);
     }
 }

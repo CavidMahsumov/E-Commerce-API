@@ -1,3 +1,4 @@
+using E_CommerceAPI.Application;
 using E_CommerceAPI.Application.Validators.Products;
 using E_CommerceAPI.Infrastructure;
 using E_CommerceAPI.Infrastructure.Enums;
@@ -9,6 +10,7 @@ using FluentValidation.AspNetCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistenceServices();
 builder.Services.AddInfrastructureServices();
+builder.Services.AddApplicationServices();
 builder.Services.AddStorage<LocalStorage>(); 
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
     policy.WithOrigins("http://localhost:4200", "http://localhost:4200").AllowAnyHeader().AllowAnyMethod()

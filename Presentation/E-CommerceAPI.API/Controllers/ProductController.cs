@@ -1,6 +1,6 @@
 ﻿using E_CommerceAPI.Application.Abstarctions.Storage;
-using E_CommerceAPI.Application.Features.Commands.CreateProduct;
-using E_CommerceAPI.Application.Features.Queries.GetAllProduct;
+using E_CommerceAPI.Application.Features.Commands.Product.CreateProduct;
+using E_CommerceAPI.Application.Features.Queries.Product.GetAllProduct;
 using E_CommerceAPI.Application.Repositories;
 using E_CommerceAPI.Application.RequestParametrs;
 using E_CommerceAPI.Application.ViewModels.Products;

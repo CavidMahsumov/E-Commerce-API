@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceAPI.Application.Features.Commands.Product.RemoveProduct
 {
-    internal class RemoveProductCommandResponse
+    public class RemoveProductCommandResponse
     {
     }
 }

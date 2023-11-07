@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceAPI.Application.Features.Queries.ProductImageFile
 {
-    internal class GetProductImageQueryResponse
+    public class GetProductImageQueryResponse
     {
     }
 }

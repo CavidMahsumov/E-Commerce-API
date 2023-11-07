@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceAPI.Application.Features.Commands.ProductImageFile.UploadProductImage
 {
-    internal class UploadProductImageCommandResponse
+    public class UploadProductImageCommandResponse
     {
     }
 }

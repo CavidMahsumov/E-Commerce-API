@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using E_CommerceAPI.Application.Repositories;
 using E_CommerceAPI.Persistence.Repositories;
+using E_CommerceAPI.Domain.Entities.Identity;
 
 namespace E_CommerceAPI.Persistence
 {
@@ -18,6 +19,7 @@ namespace E_CommerceAPI.Persistence
         {
            
             services.AddDbContext<ECommerceAPIDbContext>(options => options.UseNpgsql(Configuration.ConnectionString));
+            services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<ECommerceAPIDbContext>();
             services.AddScoped<ICustomerReadRepository,CustomerReadRepository>();
             services.AddScoped<ICustomerWriteRepository,CustomerWriteRepository>();
             services.AddScoped<IOrderReadRepository,OrderReadRepository>();
